@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+<!-- <th:block th:replace="fragments/head :: header('home')"/> -->
+</head>
+<body>
+<!--file path :: title of what you named your fragment -->
+<!--<th:block th:replace="fragments/navbar :: navbar"/> -->
+
+
+
+<li th:each="number : ${numbers}">
+    <input type="hidden" value="" />
+    <a th:href="@{'/roll-dice/' + ${number}}" th:text="${number}"></a>
+</li>
+
+<div th:text="${randomNum}"></div>
+<div th:text="${success}"></div>
+
+</body>
+</html>
+
+//Array.asList

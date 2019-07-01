@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MathController {
 
+    //Use doubles if you are working with decimals.  Also, if you are working with doubles, put a / behind the last variable.
+
     @GetMapping(path = "/add/{num1}/and/{num2}")
     @ResponseBody
 
