@@ -1,0 +1,8 @@
+USE jpa_db;
+
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE posts (
+    title VARCHAR(128) NOT NULL UNIQUE,
+    body VARCHAR(128) NOT NULL UNIQUE
+);

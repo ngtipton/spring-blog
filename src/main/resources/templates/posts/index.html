@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head th:replace="partials/head :: head('View Posts')">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 <body>
-    <h>This is the index page.</h>
+
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<header th:replace="partials/header :: header('All Posts!')"></header>
+
+<ul>
+    <li th:each="item : ${posts}">
+        <a th:href="@{'/posts/'+${item.getId()}}"><h4 th:text="${item.title}"></h4></a>
+        <p th:text="${item.body}"></p>
+    </li>
+</ul>
+
+<th:block th:include="partials/scripts :: scripts" />
+
 </body>
 </html>

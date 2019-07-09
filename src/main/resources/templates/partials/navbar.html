@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta charset="UTF-8" />
-    <title>Home</title>
-    <!-- include stylesheets, etc here -->
+    <title></title>
 </head>
 <body>
-<nav th:fragment="navbar">
 
-    <h1>"This is my navbar."</h1>
-
+<nav th:fragment="nav">
+    <ul class="nav bg-dark">
+        <li class="nav-item">
+            <a class="nav-link text-light" th:href="@{/}">Codeup Blog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" th:href="@{/posts}">Posts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" th:href="@{/posts/create}">Create Posts</a>
+        </li>
+        <li class="nav-item ml-auto">
+            <a class="nav-link text-light" th:href="@{/register}">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" th:href="@{/login}">Login</a>
+        </li>
+    </ul>
 </nav>
+
 </body>
 </html>

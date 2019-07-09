@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta charset="UTF-8" />
-    <title>Home</title>
-    <!-- include stylesheets, etc here -->
+    <title></title>
 </head>
 <body>
-<nav th:fragment="header">
 
-    <h3>"This is my header."</h3>
+<header th:fragment="header(text)" class="jumbotron">
+    <h1 class="text-center" th:text="${text}"></h1>
+</header>
 
-</nav>
 </body>
 </html>
