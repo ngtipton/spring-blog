@@ -1,43 +1,52 @@
 package com.codeup.springblog.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "posts")
+@Table(name="posts")
 public class Post {
 
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
 
+    @Column(nullable = false)
     private String title;
 
+    @Column(nullable = false)
     private String body;
+//
+//    @Column(nullable = false, name = "author_email")
+//    private String authorEmail;
 
-    public Post() {
-    }
+    @ManyToOne
+    @JoinColumn(name= "user_id", referencedColumnName = "id")
+    private User author;
+
+    public Post() { }
 
     public Post(String title, String body) {
         this.title = title;
         this.body = body;
+
     }
 
-    public Post(int id, String title, String body) {
-        this.id = id;
-        this.title = title;
-        this.body = body;
-    }
+//    public String getAuthorEmail() {
+//        return authorEmail;
+//    }
+//
+//    public void setAuthorEmail(String authorEmail) {
+//        this.authorEmail = authorEmail;
+//    }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
+
 
     public String getTitle() {
         return title;
@@ -51,7 +60,16 @@ public class Post {
         return body;
     }
 
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
     public void setBody(String body) {
         this.body = body;
     }
 }
+

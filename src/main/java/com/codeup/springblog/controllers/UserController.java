@@ -1,7 +1,7 @@
 package com.codeup.springblog.controllers;
 
 import com.codeup.springblog.models.User;
-import com.codeup.springblog.repos.UserRepository;
+import com.codeup.springblog.repos.Users;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
 
     /** Dependency Injection **/
-    private UserRepository users;
+    private Users users;
     private PasswordEncoder passwordEncoder;
 
-    public UserController(UserRepository users, PasswordEncoder passwordEncoder) {
+    public UserController(Users users, PasswordEncoder passwordEncoder) {
         this.users = users;
         this.passwordEncoder = passwordEncoder;
     }
